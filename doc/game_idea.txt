@@ -1,0 +1,56 @@
+GAME:
+
+#Player
+Player walks on a 2d grid (walks with wasd)
+Character: A 
+Color: light green
+
+#Terrain
+Empty/Walkable tiles are a '.'
+color: white (default)
+
+There are impassable tiles
+Character: O
+color: dark yellow
+make maps with set patterns of impassable tiles (first get base game working)
+
+#enemies
+There are also enemies who randomly roam the map (Should be able to configure how many)
+if they are within two tiles of the Player
+they start chasing the player for three turns
+afterwards they get exhausted, wait a turn and then return to default logic
+the player can only see enemies within three tiles 
+
+bonus: add sounds
+
+Character: 'Y'
+Color: bright red
+
+
+Win condition:
+Player reaches the "goal" by walking there
+Character: D
+Color: bright cyan
+
+__________________________________________________________________________________________
+
+Rendering style: 2D ASCII rectangle grid
+for starters: 32x32 tiles
+
+Entities:
+
+Player (controller by User)
+Char: 'A'
+Color: Bright Green
+
+WalkableTile (static)
+Char: '.'
+Color: Normal White
+
+ImpassableTile (static)
+Char: 'O'
+Color: Normal Yellow
+
+Enemy (dynamically moving based on computer logic)
+Char: 'Y'
+Color: Bright Red
