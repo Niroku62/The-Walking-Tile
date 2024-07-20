@@ -1,16 +1,16 @@
+CC = gcc
+CCFLAGS = -I ./include -Wall -Werror
+BIN = ./bin/test.exe
+SOURCES = $(wildcard ./src/*.c)
+OBJECTS = $(patsubst ./src/%.c,./obj/%.o,$(SOURCES))
+
 .PHONY: run
 
-run: ./bin/test.exe
-	./bin/test.exe
+run: $(BIN)
+	$<
 
-./bin/test.exe: ./obj/os_terminal.o ./obj/main.o ./obj/ansi_codes.o
-	gcc $^ -o ./bin/test.exe
+$(BIN): $(OBJECTS)
+	$(CC) $^ -o $(BIN)
 
-./obj/main.o: ./src/main.c
-	gcc -I ./include -c ./src/main.c -o ./obj/main.o
-
-./obj/os_terminal.o: ./src/os_terminal.c
-	gcc -I ./include -c ./src/os_terminal.c -o ./obj/os_terminal.o
-
-./obj/ansi_codes.o: ./src/ansi_codes.c
-	gcc -I ./include -c ./src/ansi_codes.c -o ./obj/ansi_codes.o
+./obj/%.o: ./src/%.c
+	$(CC) $(CCFLAGS) -c $^ -o $@
