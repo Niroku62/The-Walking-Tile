@@ -1,5 +1,5 @@
 CC = gcc
-CCFLAGS = -I ./include -Wall -Werror
+CCFLAGS = -I ./include
 BIN = ./bin/test.exe
 SOURCES = $(wildcard ./src/*.c)
 OBJECTS = $(patsubst ./src/%.c,./obj/%.o,$(SOURCES))

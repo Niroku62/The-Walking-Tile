@@ -6,7 +6,8 @@
 	],
 	"settings": {
 		"files.associations": {
-			"ansi_codes.h": "c"
+			"ansi_codes.h": "c",
+			"*.rh": "c"
 		}
 	}
 }
