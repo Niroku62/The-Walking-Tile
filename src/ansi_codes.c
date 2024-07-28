@@ -1,4 +1,5 @@
 #include "aqo/ansi_codes.h"
+#include "aqo/os_is_windows.h"
 
 #if M_OS_IS_WINDOWS
 #include "windows.h"
